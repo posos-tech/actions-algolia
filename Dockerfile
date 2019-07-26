@@ -10,6 +10,7 @@ LABEL "homepage"="https://github.com/posos-tech/actions-algolia"
 LABEL "maintainer"="posos-tech"
 
 RUN pip install --upgrade 'algoliasearch>=2.0,<3.0'
-ADD algolia.py .
+WORKDIR /app
+COPY algolia.py /app
 
 CMD ["python", "./algolia.py"]
